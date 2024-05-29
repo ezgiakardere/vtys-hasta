@@ -1,0 +1,49 @@
+﻿@using kıvıl.Entities
+@model Test
+
+<div class="container-xxl flex-grow-1 container-p-y">
+	<h4 class="fw-bold py-3 mb-4">
+		<span class="text-muted fw-light">Forms /</span> Test Ekleme
+	</h4>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card mb-4">
+				<h5 class="card-header">Test Bilgileri</h5>
+				<form asp-controller="Home" asp-area="" asp-action="AddTest" method="post">
+					<div class="card-body">
+						<div asp-validation-summary="All"></div>
+
+						<div class="form-group">
+							<label asp-for="KanBasıcı" class="form-label">Kan Basıcı</label>
+							<input asp-for="KanBasıcı" type="number" class="form-control mb-3" placeholder="Lütfen kan basıcı giriniz">
+							<span asp-validation-for="KanBasıcı" class="text-danger"></span>
+						</div>
+
+						<div class="form-group">
+							<label asp-for="Kolestrol" class="form-label">Kolestrol</label>
+							<input asp-for="Kolestrol" type="number" class="form-control mb-3" placeholder="Lütfen kolestrol giriniz">
+							<span asp-validation-for="Kolestrol" class="text-danger"></span>
+						</div>
+
+						<div class="form-group">
+							<label asp-for="KanSekeri" class="form-label">Kan Şekeri</label>
+							<input asp-for="KanSekeri" type="number" class="form-control mb-3" placeholder="Lütfen kan şekeri giriniz">
+							<span asp-validation-for="KanSekeri" class="text-danger"></span>
+						</div>
+
+						<div class="form-group">
+							<label asp-for="HastaId" class="form-label">Hasta</label>
+							<input asp-for="HastaId" type="number" class="form-control mb-3" placeholder="Lütfen Hasta Id giriniz">
+							
+						</div>
+
+						<div class="form-group">
+							<button class="btn btn-primary">Kaydet</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,77 @@
+﻿@using kıvıl.Entities
+@model List<Hasta>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Isim</th>
+                <th>Soyisim</th>
+                <th>Cinsiyet</th>
+                <th>Yas</th>
+                <th>Egzersiz Yapıyor Mu?</th>
+                <th>Aile Geçmişi</th>
+                <th>Sigara Kullanımı</th>
+                <th>Alkol Kullanımı</th>
+                <th>Kalp Krizi Riski</th>
+                <th>Kan Basıncı</th>
+                <th>Kolestrol</th>
+                <th>Kan Şekeri</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Isim</td>
+                    <td>@item.Soyisim</td>
+                    <td>@item.Cinsiyet</td>
+                    <td>@item.Yas</td>
+                    <td>@(item.EgzersizYapıyorMu ? "Evet" : "Hayır")</td>
+                    <td>@(item.AileGecmisi ? "Evet" : "Hayır")</td>
+                    <td>@(item.SigaraKullanımı ? "Evet" : "Hayır")</td>
+                    <td>@(item.AlkolKullanımı ? "Evet" : "Hayır")</td>
+                    <td>@(item.KalpKriziRiski ? "Evet" : "Hayır")</td>
+                    <td>@item.Test?.KanBasıcı</td>
+                    <td>@item.Test?.Kolestrol</td>
+                    <td>@item.Test?.KanSekeri</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
